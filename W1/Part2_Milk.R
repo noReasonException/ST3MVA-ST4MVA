@@ -25,6 +25,7 @@ milk[,1]<-as.character(milk[,1])
 milk[9,1] <- "Cow Brown Swiss" #This datarow contains invalid characters, and 
 #R to panic, this line fixes this
 milkWithoutSpecies <- milk[,2:6]
+milkSpecies <- milk[,1]
 stars(milkWithoutSpecies,labels=as.vector(milk[,1]),draw.segments = TRUE)
 
 #Note down any species that you can identify
@@ -49,4 +50,19 @@ my.cluster.analysis
 plot(my.cluster.analysis)
 #Cut at 40, 3 clusters
 #Elephant, Dolphin
+
+#CutTree
+my.clusters<-cutree(my.cluster.analysis,3)
+#Plot Single scatter
+plot(x=fat,y=protein,pch=c(8,17,19)[my.clusters])
+text(fat,protein-0.5,labels=milkSpecies,cex=0.4)
+#Even better, plot all scatters
+pairs(milkWithoutSpecies,col=c("#bc5090","#ff6361","#ffa600")[my.clusters])
+
+#Are your clusters distinct(not overlapping) on your plot? What can you infer 
+#about the milk content properties of your clusters?
+#-> Some combinations overlap, other dont, a nice separation 
+#-> Is between Fat,Protein | Lactose,Fat |Fat, Ash|Fat,total solids
+#-> Every group's distance is less than equal on the join point
+#OOps, i did already the next question. 
 
