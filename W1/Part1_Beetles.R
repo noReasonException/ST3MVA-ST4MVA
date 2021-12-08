@@ -77,6 +77,7 @@ hist(beetle[,7],
 #make sure you do not include the ID number for each beetle in your plot(
 #does it matter if a beetle is called beetle 1 or beetle 2?)
 beetlesWithoutID <- beetle[,2:7]
+par(mfrow=c(1,1))
 pairs(beetlesWithoutID)
 #Comment on any evident relationships between the variables, are any of these
 #relationships suprising?
@@ -89,4 +90,19 @@ pairs(beetlesWithoutID)
 #observations?If so, how many groups do you think could be identified, and 
 #whitch variables do you think would be key in distinguishing the groups?
 
+#Chernoff's faces
+library(aplpack)
+par(mfrow=c(1,1))
+faces(beetlesWithoutID)
 
+#Whitch variable is used to determine the height of the mouth for each face?
+#->"height of mouth  " "a.fore"  
+
+#Star plots
+par(mfrow=c(1,1))
+stars(beetlesWithoutID,draw.segments = TRUE)
+
+#Can you identify any groups of beetles from your plots?
+#->Big Sec Joint(66-100)
+#-> Big Head(33-66)
+#-> Big All(0-33)
