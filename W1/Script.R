@@ -1,5 +1,5 @@
 
-#Introduction 
+#Introduction ==================================
 beetle <- read.csv("Beetle.csv")  #Read CSV
 head(beetle) #Check the first few lines
 attach(beetle) #attach, now collums can be accessed as variable names
@@ -31,11 +31,11 @@ beetle[2] #Also a way
 beetle[2,1] #2nd row 1rst collum
 beetle[2,] #Full second row
 beetle[,2] #Full second collumn
-
+#End of Introduction ==================================
 #Using this matrix style notation, can you identify the code that would print 
 #the front angle of the aedeagus for all the beetles in the dataset?
 
-#3 Ways of doing that
+#->3 Ways of doing that
 beetle['a.fore']
 beetle[,5]
 a.fore
@@ -72,5 +72,21 @@ hist(beetle[,7],
 
 #->We can see that angle and fore have nice separators, these may be used later 
 #to classify into different species
+
+#Use the pairs function to produce a scatterplot matrix of the beetle data,
+#make sure you do not include the ID number for each beetle in your plot(
+#does it matter if a beetle is called beetle 1 or beetle 2?)
+beetlesWithoutID <- beetle[,2:7]
+pairs(beetlesWithoutID)
+#Comment on any evident relationships between the variables, are any of these
+#relationships suprising?
+#-> First joint and second joint, thats trivial and expected
+#-> a.fore  and side, trivial, variables dependent
+#-> sec.joint and head, non trivial
+
+
+#Consider the bivariate plots, can you identify any potential groupings of 
+#observations?If so, how many groups do you think could be identified, and 
+#whitch variables do you think would be key in distinguishing the groups?
 
 
