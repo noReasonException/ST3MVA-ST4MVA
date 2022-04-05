@@ -1,6 +1,6 @@
 
 #Introduction ==================================
-beetle <- read.csv("Beetle.csv")  #Read CSV
+beetle <- read.csv("W1/Data/Beetle.csv")  #Read CSV
 head(beetle) #Check the first few lines
 attach(beetle) #attach, now collums can be accessed as variable names
 
