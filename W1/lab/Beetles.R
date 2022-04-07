@@ -57,6 +57,14 @@ for(i in seq.int(2,7)){
 
 beetlesWithoutId<-beetles[,2:7]
 pairs(beetlesWithoutId)
+#Between Variables Relationships
+#First joint linear with a.fore
+#Sec joint with head
+#a fore side
+
+#Groupings
+#->A fore - first joint
+#->Angle first.joint 
 
 #=========================================================================================
 #library(aplpack)
@@ -65,10 +73,15 @@ pairs(beetlesWithoutId)
 
 faces(beetlesWithoutId)
 
+#Which variable is used to determine the height of the mouth for each face?
+#->"height of mouth  " "a.fore" 
+
 #=========================================================================================
 
 #Stars plots can often be more informative than Chernoff’s faces. To produce a stars plot
 #simply use
 #stars(..)
 
-stars(beetlesWithoutId)
+stars(beetlesWithoutId,draw.segments = T,labels=beetles[,1])
+#Can you identify any groups of beetles from your plots?
+#->1 to 21 , 22 to 52 , 53 to 74
